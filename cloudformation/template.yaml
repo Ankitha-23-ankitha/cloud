@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  LogClassifierFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: LogClassifier
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::123456789012:role/lambda-role
+      Code:
+        ZipFile: |
+          def lambda_handler(event, context):
+              return "Classified"
+
+  SelfHealerFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: SelfHealer
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.9
+      Role: arn:aws:iam::123456789012:role/lambda-role
+      Code:
+        ZipFile: |
+          def lambda_handler(event, context):
+              return "Healed"

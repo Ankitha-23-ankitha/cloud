@@ -1,0 +1,2 @@
+2023-08-01T12:00:00Z INFO Service started successfully.
+2023-08-01T12:05:00Z ERROR Failed to connect to database.
